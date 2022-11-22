@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More or Less More using Javascript</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="card">
+            <div class="icon">
+                <img src="images/computer.png">
+            </div>
+
+            <div class="content">
+                <h3>Web & Mobile Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quam quae consequatur! Ducimus doloribus facere asperiores. Necessitatibus, quod recusandae? Culpa dignissimos voluptates quod nobis, quidem nihil quia enim repellendus molestiae aperiam sed mollitia dolorum incidunt ipsum! Suscipit unde enim autem, odio dolores consequatur eligendi alias necessitatibus facere, aliquam voluptas sit ex officia sequi eum, excepturi nostrum animi dolorem dignissimos debitis!</p>
+            </div>
+            <a class="more"></a>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <img src="images/support.png">
+            </div>
+
+            <div class="content">
+                <h3>Costumer Support</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita optio pariatur nam laborum enim accusamus explicabo. Autem temporibus qui, similique optio nam aspernatur consequatur minus corrupti enim ea consectetur. Quam libero impedit illo voluptatibus dolores officiis blanditiis quaerat quasi officia labore harum vero, quia ad laborum, reiciendis nisi minima nam.</p>
+            </div>
+            <a class="more"></a>
+        </div>
+
+            <div class="card">
+                <div class="icon">
+                    <img src="images/marketing.png">
+                </div>
+    
+                <div class="content">
+                    <h3>Marketing & Communication</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita optio pariatur nam laborum enim accusamus explicabo. Autem temporibus qui, similique optio nam aspernatur consequatur minus corrupti enim ea consectetur. Quam libero impedit illo voluptatibus dolores officiis blanditiis quaerat quasi officia labore harum vero, quia ad laborum, reiciendis nisi minima nam.</p>
+                </div>
+                <a class="more"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    let more = document.querySelectorAll('.more');
+
+    for(let i = 0; i<more.length; i++){
+    more[i].addEventListener('click', function(){
+        more[i].parentNode.classList.toggle('active') //altera a classe do parentNode (no caso, a class CARD) e adiciona a classe ACTIVE nela
+    })
+}
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+.cards {
+    max-width: 980px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+
+    /*  alinhando o grid no centro da tela */
+    margin: 0 auto;
+}
+
+.card__title{
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    /* background-color: var(--shape); */
+    cursor: pointer;
+    /* border: 3px solid var(--shape); */
+}
+
+/* padronizando as imagens dentro dos cards */
+.image {
+    width: 100%;
+    padding-top: 2rem;
+    overflow: hidden; 
+
+    position: relative
+}
+
+.image img{
+    width: 100%;
+}

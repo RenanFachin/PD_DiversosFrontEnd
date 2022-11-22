@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --red: #F75A68;
+    --green: #00B37E;
+    --orange: #FBA94C;
+    --gray: #7C7C8A;
+}
+
+body{
+    font-size: 20px;
+    letter-spacing: 1.2px;
+}
+
+
+.box {
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 15px;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bg-red {
+    background: var(--red);
+}
+
+.bg-green {
+    background: var(--green);
+}
+
+.bg-orange {
+    background: var(--orange);
+}
+
+.bg-gray {
+    background: var(--gray);
+}

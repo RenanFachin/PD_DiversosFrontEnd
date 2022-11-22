@@ -1,0 +1,185 @@
+.hover-animation:hover {
+    background-color: var(--orange);
+}
+
+.hover-animation {
+    /* A transition SEMPRE deve ser utilizada na classe que antecede ao HOVER */
+    /* O primeiro parâmetro é dizer onde vai acontecer (background-color) */
+    /* O segundo parâmetro é a duração desta animação (s ou ms) */
+    transition: background-color 0.4s;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.scale-animation:hover {
+    transform: scale(1.2);
+}
+
+.scale-animation {
+    transition: transform 0.4s;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.rotate-animation:hover {
+    transform: rotateY(180deg);
+}
+
+.rotate-animation {
+    transition: transform 2s;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.delay-animation:hover {
+    width: 400px;
+    height: 400px;
+}
+
+/* Muito utilizado para fazer menus animados */
+.delay-animation {
+    /* O terceiro parâmetro é o DELAY (2s) */
+    transition: width 1s 2s, height 3s 1s;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.checkbox-transition {
+    margin: 15px;
+    width: 60px;
+    height: 60px;
+
+
+    transition: transform 1s;
+}
+
+.checkbox-transition:checked {
+    /* Só vai aplicar a animação quando o checkbox for marcado */
+    transform: scale(1.3);
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.focus-transition:focus {
+    background-color: var(--green);
+}
+
+.focus-transition{
+    width: 200px;
+    height: 60px;
+    margin: 15px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.radio-transition {
+    margin: 15px;
+    width: 30px;
+    height: 30px;
+
+    transition: transform 1s;
+}
+
+.radio-transition:checked{
+    transform: scale(1.4);
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Estratégia para aproveitamento de espaço na aplicação */
+.search {
+    margin: 15px;
+    width: 30px;
+    height: 30px;
+
+    transition: width 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.search:focus{
+    width: 200px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.spinner {
+    border-radius: 50%;
+    border: 5px solid var(--red);
+    
+    animation: rotate 2s infinite;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.acceleration-animation {
+    /* Animanções
+    ease - linear
+    easein - rápida na entrada
+    easeout - rápida na saida
+    ease in out - as entradas e saidas são mais aceleradas
+    */
+    animation: rotate 2s ease-in infinite;
+}
+
+
+
+.animation-pause-start:hover{
+    /* Propriedade para pausar as animações */
+    animation-play-state: paused;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+.animation-content::after {
+    content: '';
+    animation: promo 2s linear infinite;
+}
+
+
+@keyframes promo {
+    0% { 
+        content: 'Promoção';
+    }
+    50% { 
+        content: '';
+    }
+    60% { 
+        content: 'Frete grátis';
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+
+.arrow-size{
+    font-size: 44px;
+    background-color: var(--green);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    animation: arrow-down 1s ease-in-out infinite;
+}
+
+
+@keyframes arrow-down {
+    0% {
+        margin: 0;
+    }
+
+    30% {
+        margin: 10px 0;
+    }
+}

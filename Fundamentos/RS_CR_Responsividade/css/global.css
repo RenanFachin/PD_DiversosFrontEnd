@@ -1,0 +1,51 @@
+:root {
+  --background: #FFF;
+  --shape: #171513;
+  --text: #F3F1EF;
+  --title: #171513;
+  --caption: #8C8C8C;
+  --success: #E74E35;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+html, body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body{
+  font-size: 1.6rem;
+}
+
+.button{
+  font-size: 16px;
+  font-weight: 600;
+
+  color: var(--text);
+  background-color: var(--success);
+
+  padding: 12px 30px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  border: none;
+
+  transition: all 0.3s;
+}
+
+a{
+  text-decoration: none;
+}
+
+.button:hover{
+  filter: brightness(0.9);
+}

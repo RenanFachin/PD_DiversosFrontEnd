@@ -1,0 +1,94 @@
+:root{
+    --ff-button: 'Poppins', sans-serif;
+    --bg-color: #28272a;
+    --bg-button: rgba(255,255,255,0.1);
+    --fontColor: rgba(255,255,255,0.5);
+    --colorCircle: #04fe4d;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--ff-button);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+}
+
+.btn{
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background: var(--bg-button);
+    border-radius: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--bg-button);
+    letter-spacing: 2px;
+    /* Para dar um efeito (de reflexo) no botão */
+    border-top: 0.5px solid rgba(255,255,255,0.35); 
+    border-left: 0.5px solid rgba(255,255,255,0.35); 
+    padding-left: 40px;
+
+    /* Deixando a transição mais fluida */
+    transition: 0.5s;
+
+    /* Não deixando o efeito de reflexo vazar do conteudo do botão */
+    overflow: hidden; 
+}
+
+
+.btn:hover{
+    /* Voltando para o lugar normal */
+    padding-left: 0px;
+    padding-right: 40px;
+
+    color: rgba(255,255,255,1);;
+}
+
+
+/* Criando a bolinha */
+.btn span{
+    /* Absolute em relação ao relative do pai (.btn) */
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background: var(--colorCircle);
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: #1a191d;   
+}
+
+.btn:hover span{
+    /* 55px por que left + width */
+    left: calc(100% - 55px);
+}
+
+.btn:after{
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 100%;
+    z-index: 1;
+    background: rgba(255,255,255,0.3);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 0.8s ease-in-out;
+}
+
+.btn:hover:after{
+    transform: translateX(170px) skewX(30deg);
+}
