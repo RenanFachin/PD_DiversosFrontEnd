@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Slider - MapaDev Week Project</title>
+
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="stylesheet" href="./src/css/reponsividade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="src/images/pokebola.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="page">
+    <header>
+            <img src="./src/images/pokebola.png" alt="Imagem de uma pokebola">
+            <h1>MapaDev Week</h1>
+    </header>
+
+    <main>
+        <button class="btn" id="btn__previous">
+            <img src="./src/images/seta.png" alt="Imagem de uma seta apontando para voltar">
+        </button>
+
+        <ul>
+            <!-- Pikachu -->
+            <li class="card bg_1 selected">
+                <div class="infoCard">
+                    <h2>Pikachu</h2>
+                    <span>HP 300</span>
+                </div>
+
+                <div class="container">
+                    <img src="./src/images/pikachu.png" alt="Imagem do Pikachu" id="containerPokemon">
+                </div>
+
+                <div class="cardDescription">
+                    <h3>Description</h3>
+                    <p>Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.</p>
+                </div>
+            </li>
+
+            <!-- Charizard -->
+            <li class="bg_2 card">
+                <div class="infoCard">
+                    <h2>Charizard</h2>
+                    <span>HP 800</span>
+                </div>
+
+                <div class="container">
+                    <img src="./src/images/charizard.png" alt="Imagem do pokemon Charizard" id="containerPokemon">
+                </div>
+
+                <div class="cardDescription">
+                    <h3>Description</h3>
+                    <p>It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.</p>
+                </div>
+            </li>
+
+            <!-- Mewtwo -->
+            <li class="bg_3 card">
+                <div class="infoCard">
+                    <h2>Mewtwo</h2>
+                    <span>HP 1200</span>
+                </div>
+
+                <div class="container">
+                    <img src="./src/images/mewtwo.png" alt="Imagem do pokemon Mewtwo" id="containerPokemon">
+                </div>
+
+                <div class="cardDescription">
+                    <h3>Description</h3>
+                    <p>Its DNA is almost the same as Mew's. However, its size and disposition are vastly different.</p>
+                </div>
+            </li>
+            
+
+        </ul>
+
+        <button class="btn" id="btn__next">
+            <img src="./src/images/seta.png" alt="Imagem de uma seta apontando para avançar">
+        </button>
+    </main>
+</div>
+
+<script src="./src/js/index.js"></script>
+
+</body>
+</html>

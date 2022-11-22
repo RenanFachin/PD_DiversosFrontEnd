@@ -1,0 +1,44 @@
+@media (max-width: 620px){
+    header
+    {
+        padding-top: 80px;
+    }
+    main
+    {
+        padding: 0 15px;
+        gap: 20px;
+    }
+
+    main button.btn
+    {
+        width: 60px;
+        height: 60px;
+        padding: 15px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main ul
+    {
+        height: 500px;
+    }
+
+    main ul li #containerPokemon
+    {
+        max-height: 260px;
+    }
+
+    main ul li .infoCard h2
+    {
+        max-width: 50%;
+        font-size: 18px;
+    }
+
+    main ul li .infoCard span
+    {
+        font-size: 12px;
+    }
+
+}

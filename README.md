@@ -14,6 +14,8 @@ LP -> Projetos de landingPage desenvolvidos puramente com html, css e javascript
 - [RS_LinkTree](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_LinkTree)
 - [RS_UIClone_Google](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_UIClone_Google)
 - [RS_UIClone_Dropbox](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_UIClone_Dropbox)
+- [RS_ReactStudies](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_ReactStudies)
+- [PD_pokemonSlider](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/PD_pokemonSlider)
 
 
 - [AnimatedForm](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/FO_AnimatedForm)
@@ -33,10 +35,10 @@ LP -> Projetos de landingPage desenvolvidos puramente com html, css e javascript
 - [LP_Pepsi](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/LP_Pepsi)
 
 - [Fundamentos](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos)
-    - [RS_CR_AnimationCSS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_CR_AnimationCSS)
-    - [RS_CR_FundamentosEstruturaDeRepeticao](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_CR_FundamentosEstruturaDeRepeticao)
-    - [RS_CR_FundamentosNODEJS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_CR_FundamentosNODEJS)
-    - [RS_CR_FundamentosReactJS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_CR_FundamentosReactJS)
-    - [RS_CR_PrimeirosPassosNodeJS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_CR_PrimeirosPassosNodeJS)
-    - [RS_CR_Responsividade](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_CR_Responsividade)
-    - [RS_CR_synchronous_asynchronous](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/RS_CR_synchronous_asynchronous)
+    - [RS_CR_AnimationCSS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos/RS_CR_AnimationCSS)
+    - [RS_CR_FundamentosEstruturaDeRepeticao](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos/RS_CR_FundamentosEstruturaDeRepeticao)
+    - [RS_CR_FundamentosNODEJS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos/RS_CR_FundamentosNODEJS)
+    - [RS_CR_FundamentosReactJS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos/RS_CR_FundamentosReactJS)
+    - [RS_CR_PrimeirosPassosNodeJS](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos/RS_CR_PrimeirosPassosNodeJS)
+    - [RS_CR_Responsividade](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos/RS_CR_Responsividade)
+    - [RS_CR_synchronous_asynchronous](https://github.com/RenanFachin/PD_DiversosFrontEnd/tree/main/Fundamentos/RS_CR_synchronous_asynchronous)
