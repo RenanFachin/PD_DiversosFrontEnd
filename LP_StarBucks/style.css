@@ -1,0 +1,357 @@
+:root{
+    --bg-color: #FFFFFF;
+    --ff-all: 'Poppins', sans-serif;
+    --fc-text: #333;
+    --fc-span: #017143;
+}
+
+*{
+    /*Limpando as propriedades iniciais do projeto*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /*Retirando as pré definições de estilo de texto*/
+    text-decoration: none;
+    list-style: none;
+
+    /*Definindo para o projeto todo a fonte Poppins*/
+    font-family: var(--ff-all);
+}
+
+.page{
+    display: flex;
+
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+
+    background: var(--bg-color);
+}
+
+header{
+    /*Definindo que o header começa a partir do ponto 0(top) e 0(left), com uma largura de 100% da página*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*Colocando um padding de 20px(top/bottom) e 100px(left e right)*/
+    padding: 20px 100px;
+
+    /*Colocando a logo e a ul um ao lado da outra (FLEX)*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .logo{
+    /*Definindo o tamanho da logo e por tabela o header*/
+    max-width: 100px;
+    filter: drop-shadow(1px 3px 3px rgb(84, 84, 84))
+}
+
+header ul{
+    /*Colocando os elementos da lista um ao lado do outro (FLEX) e com um gap de 40px*/
+    display: flex;
+    gap: 40px;
+
+}
+
+header ul li a{
+    /*Cor da fonte e peso dela*/
+    color: var(--bg-color)  ;
+    font-weight: 400;
+    font-size: 18px;
+
+}
+
+header ul li{
+    transition: ease 800ms;
+}
+
+main{
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .textBox{
+    max-width: 650px;
+}
+
+main .textBox h2{
+    color: var(--fc-text);
+    font-size: 4.2em;
+    line-height: 1.4em;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    animation: topdown 1500ms;
+}
+
+main .textBox h2 span{
+    color: var(--fc-span);
+    font-size: 1.2em;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    
+    filter: drop-shadow(1px 3px 3px rgb(84, 84, 84));
+
+
+}
+
+main .textBox p{
+    color: var(--fc-text);
+    margin-top: 20px;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+main .textBox a{
+    /*Display inline para poder por uma margin top em relação ao elemento P*/
+    display: inline-block;
+    margin-top: 20px;
+    
+
+    /*Cor de fundo e de letra*/
+    background: var(--fc-span);
+    color: var(--bg-color);
+
+    /*Características do texto*/
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    
+    /*Padding interno*/
+    padding: 6px 18px;
+
+    filter: drop-shadow(1px 3px 3px rgb(84, 84, 84));
+
+    transition: ease 500ms;
+}
+
+main .textBox a:hover{
+    transform: scale(1.1);
+
+}
+
+header nav ul li:hover{
+    transform: translateY(-15px);
+}
+
+main .imgBox{
+    width: 600px;
+
+    /*display: flex;
+    justify-content: flex-start;*/
+
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+main .imgBox img{
+    max-width: 340px;
+}
+
+
+
+.thumb{
+    /*Definindo uma posição absoluta das imagens na tela (bem ao centro)*/
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    /*Efeito de translado em X*/
+    transform: translateX(-50%);
+
+    /*Um do lado do outro*/
+    display: flex;
+
+}
+
+.thumb li{
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.thumb li:hover{
+    transform: translateY(-30px);
+}
+
+.thumb li img{
+    max-width: 70px;
+}
+
+.sci{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid white;
+    padding: 7px 7px;
+    border-radius: 20px;
+}
+
+
+.sci li a{
+    display: inline-block;
+    margin: 10px 0;
+
+    /*Diminuir o tamanho dos ícones*/
+    transform: scale(0.7);
+    
+    /*Deixar os ícones brancos*/
+    filter: invert();
+
+
+}
+
+.circle{
+    /*Definindo o fundo da tela todo em verde*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--fc-span);
+
+    /*fazendo o círculo*/
+    clip-path: circle(900px at right 800px);
+    filter: drop-shadow(1px 3px 3px rgb(84, 84, 84))
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 991px)
+{
+    header
+    {
+        padding: 20px;
+    }
+
+    header .logo 
+    {
+        max-width: 80px;
+        filter: drop-shadow(1px 3px 3px rgb(84, 84, 84));
+    }
+    header ul
+    {
+        display: none;
+    }
+    .toggle
+    {
+        position: absolute;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(images/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }
+    .toggle.active
+    {
+        position: fixed;
+        right: 20px;
+        background: url(images/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    header nav ul.navigation.active
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #ffffff;
+        z-index: 10;
+        gap: 20px;
+    }
+    header nav ul li a{
+        color: #333;
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    .page
+    {
+        padding: 20px 20px 120px;
+    }
+    main
+    {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    main .textBox
+    {
+        max-width: 100%;
+    }
+    main .textBox h2
+    {
+        font-size: 2.3em;
+        margin-bottom: 15px;
+    }
+    main .textBox p
+    {
+        font-size: 0.9em;
+        margin-bottom: 0px;
+    }
+    .circle
+    {
+        clip-path: circle(500px at center bottom);
+    }
+    main .imgBox
+    {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    main .imgBox img
+    {
+        max-width: 200px;
+    }
+    .thumb{
+        bottom: 2%;
+        left: 48%
+    }
+    .thumb li img
+    {
+        max-width: 40px;
+    }
+    .sci
+    {
+        background: #017143;
+        right: 5px;
+        top: 53%;
+        width: 50px;
+    }
+}

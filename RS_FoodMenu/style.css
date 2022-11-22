@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --ff-titles: 'Roboto Serif', serif;
+    --ff-texts: 'Roboto', sans-serif;
+
+    --fc-primaryTitle: #2D2C2A;
+    --fc-secundaryTitle: #995000;
+    --fc-subtitleEffect: rgba(0, 0, 0, 0.7);
+    
+
+    --bg-primaryColor: #FFEDD5;
+    --bg-auxiliarColor: #FED7AA;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: var(--bg-primaryColor);
+}
+
+.page{
+    max-width: 30rem;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 3.2rem 0;
+}
+
+h1,
+h2,
+h3{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: var(--ff-titles);
+    color: var(--fc-primaryTitle);
+}
+
+header h1{
+    font-size: 2.8rem;
+    line-height: 3.3rem;
+}
+
+header h1 span{
+    color: var(--fc-secundaryTitle);
+}
+
+header p{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    font-family: var(--ff-texts);
+    color: var(--fc-subtitleEffect);
+}
+
+section {
+    margin-bottom: 2.4rem;
+}
+
+section h2{
+    font-size: 1.8rem;
+    text-align: center;
+    background-color: var(--bg-auxiliarColor);
+    margin-bottom: 2.4rem;
+    padding: 0.8rem 1.6rem;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    display: flex;
+    margin-bottom: 1.6rem;
+}
+
+li .menu__details{
+    max-width: 24rem;
+}
+
+.menu__details h3{
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.menu__description{
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+    font-family: var(--ff-texts);
+    color: var(--fc-subtitleEffect);
+}

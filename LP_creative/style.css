@@ -1,0 +1,276 @@
+:root{
+    --ff-page: 'Poppins', sans-serif;
+
+    --bg-primaryColor: #0B0C0D;
+    --bg-buttonColor: #BF6E26;
+    --fc-textColor: #fff;
+    --fc-menuTextColor: #0B0C0D;
+    --fc-menuTextColorHover: #BF6E26;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--ff-page);
+}
+
+body{
+    background: var(--bg-primaryColor);
+}
+
+section{
+    position: relative;
+    padding: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section .logo{
+    position: fixed;
+    top: 30px;
+    color: var(--fc-textColor);
+    font-weight: 700;
+    font-size: 2em;
+    z-index: 100;
+    cursor: pointer;
+}
+
+section .bg{
+    position: absolute;
+    top: 0; 
+    right: 60px;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    max-width: 700px;
+    z-index: 1;
+}
+
+main h2{
+    color: var(--fc-textColor);
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+main h2 span{
+    color: #BF6E26;
+    font-size: 50px;
+    text-transform: none;
+    letter-spacing: 5px;
+    font-weight: 200;
+    line-height: 1.1em;
+}
+
+main p{
+    color: var(--fc-textColor);
+    font-size: 18px;
+    margin: 40px 0 10px;
+}
+
+main a{
+    color: var(--fc-textColor);
+    /*background: var(--bg-buttonColor);*/
+    background: rgba(0,0,0,0.75);
+    margin: 20px 0;
+    font-weight: 500;
+    padding: 10px 30px;
+    display: inline-block;
+    border-radius: 99999px;
+
+    /* Criando o Efeito */
+    width: 180px;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+main a::after{
+    /* Criando o Efeito */
+    content: '';
+    width: 200px;
+    height: 30px;
+    background-image: conic-gradient(transparent,transparent,transparent, var(--bg-buttonColor));
+    position: absolute;
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+
+main a::before{
+    /* Criando o Efeito */
+    content: '';
+    width: 200px;
+    height: 30px;
+    background-image: conic-gradient(transparent,transparent,transparent, var(--bg-buttonColor));
+    position: absolute;
+    animation: animate 4s linear infinite;
+}
+
+main .boxEffect{
+    position: absolute;
+    inset: 2px;
+    background: #0B0C0D;
+    border-radius: 99999px;
+    z-index: 1;
+    padding: 8px 30px;
+}
+
+@keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+section .menuToggle{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #79878C url(images/menu.png);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+section .menuToggle.active{
+    background: #79878C url(images/close.png);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+
+section nav{
+    position: fixed;
+    top: 0;
+    left: calc(100% - 60px);
+    width: 100%;
+    height: 100%;
+    background: #A8B9BF;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s;
+}
+
+section nav.active{
+    left: 0px;
+}
+
+section nav ul{
+    position: relative;
+}
+
+section nav ul li{
+    position: relative;
+    text-align: center;
+}
+
+section nav ul li a{
+    font-size: 2.5em;
+    color: var(--fc-menuTextColor);
+    font-weight: 300;
+}
+
+section nav ul li a:hover{
+    color: var(--fc-menuTextColorHover);
+}
+
+.socialBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialBar ul{
+    position: relative;
+}
+
+.socialBar ul li a{
+    position: relative;
+    display: inline-block;
+    transform: scale(0.6);
+}
+
+.socialBar .emailBox{
+    position: absolute;
+    bottom: 20px;
+    transform: scale(0.6);
+}
+
+footer p.copyRightText{
+    position: absolute;
+    bottom: 20px;
+    color: var(--fc-textColor);
+    font-size: 14px ;
+    margin: 20px 0 10px;
+    left: 100px;
+    filter: brightness(0.15);
+}
+
+@media (max-width: 760px)
+{
+    section
+    {
+        padding: 100px 40px;
+    }
+    main h2
+    {
+        font-size: 2.5em;
+    }
+    section nav
+    {
+        left: 100%;
+    }
+    section .bg
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+    section .logo
+    {
+        top: 10px;
+        font-size: 2em;
+    }
+    section nav ul li a
+    {
+        font-size: 2em;
+    }
+    footer p.copyRightText
+    {
+        left: 40px;
+    }
+}

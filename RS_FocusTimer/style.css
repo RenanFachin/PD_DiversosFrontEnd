@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --ff-roboto: 'Roboto', sans-serif;
+    font-size: 62.5%;
+
+    /* Light Theme */
+    /* Cor do Fundo */
+    --bg-color-lighTheme: #FFF;
+
+    /* Cor dos relógios e controles */
+    --fc-color-clock: #323238;
+    --fc-color-clockButtons: #8d8d91;
+
+    /* Cor fundo dos cards normal*/
+    --bg-color-normalCard: #E1E1E6;
+    /* Cor fundo dos cards ativado*/
+    --bg-color-activeCard: #02799D;
+
+    /* Cor simbolo dos cards normal*/
+    --fill-button: #323238;
+    /* Cor simbolo dos cards ativado*/
+    --fill-activeButton: #FFFFFF;
+
+    /* Simbolo do tema*/
+    --fill-lighThemeIcon: #000000;
+
+    /*--------------------------------------------------------------------------------------*/
+
+    /* Dark Theme */
+    /* Cor do Fundo */
+    --bg-color-darkTheme: #121214;
+
+    /* Cor dos relógios e controles */
+    --fc-color-darkTheme-Clock: #FFFFFF;
+    --fc-color-darkTheme-ClockButtons: #C4C4CC;
+
+    /* Cor fundo dos cards normal*/
+    --bg-color-darkTheme-NormalCard: #29292E;
+    /* Cor fundo dos cards ativado*/
+    --bg-color-darkTheme-ActiveCard: #0A3442;
+
+    /* Cor simbolo dos cards normal*/
+    --fill-darkTheme-button: #C4C4CC;
+    /* Cor simbolo dos cards ativado*/
+    --fill-darkTheme-activeButton: #FFFFFF;
+
+    /* Simbolo do tema*/
+    --fill-darkThemeIcon: #FFFFFF;
+}
+
+
+body{
+    background-color: var(--bg-color-lighTheme);
+    font-family: var(--ff-roboto);
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    display: flex;
+    align-items: center;
+
+    width: 82.1rem;
+    height: 33.6rem;
+    margin: 25rem auto;
+}
+
+main section.tempo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 19.2rem;
+
+    width: 32.1rem;
+    /*vw para mudar conforme a largura (viewport width)*/
+    height: 21.3rem;
+}
+
+main section div#timer{
+    font-size: clamp(4rem, 4rem + 10vw, 12.6rem);
+    font-weight: 500;
+    /*Juntando os elementos <span>*/
+    display: flex;
+    height: 15rem;
+    color: var(--fc-color-clock);
+    margin-bottom: 1.7rem;
+}
+
+main section div#controls{
+    /*background-color: var(--bg-primary-light);*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32.1rem;
+    border-radius: 9999px;
+    gap: 4rem;
+}
+
+/*Cor dos comandos*/
+main section div#controls .play svg path,
+main section div#controls .stop svg path,
+main section div#controls .plus svg path,
+main section div#controls .minus svg path{
+    fill: var(--fc-color-clockButtons);
+}
+
+main section.moods{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+}
+
+main div.cardOne,
+main div.cardTwo,
+main div.cardThree,
+main div.cardFour{
+    background: var(--bg-color-normalCard);
+    border-radius: 2.4rem;
+    width: 13.8rem;
+    height: 15.2rem;
+    padding: 2.4rem; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ativando com o JS*/
+
+main div.cardOne.activeButton{
+    background: #779779;
+    transform: scale(1.2);
+}
+
+main div.cardTwo.activeButton{
+    background: #7e7797;
+    transform: scale(1.2);
+}
+
+main div.cardThree.activeButton{
+    background: #916699;
+    transform: scale(1.2);
+}
+
+main div.cardFour.activeButton{
+    background: #a64e55;
+    transform: scale(1.2);
+}
+
+main section.tempo div#controls button.play,
+main section.tempo div#controls button.stop,
+main section.tempo div#controls button.plus,
+main section.tempo div#controls button.minus,
+main section.moods div.cardOne button#forest,
+main section.moods div.cardTwo button#rain,
+main section.moods div.cardThree button#coffee,
+main section.moods div.cardFour button#fire{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+main section.moods div.cardOne svg path
+main section.moods div.cardTwo svg path
+main section.moods div.cardThree svg path
+main section.moods div.cardFour svg path
+{
+    fill: var(--fill-button);
+}
+
+/* volume normal */
+main section.moods div.cardOne input.range,
+main section.moods div.cardTwo input.range,
+main section.moods div.cardThree input.range,
+main section.moods div.cardFour input.range
+{
+    appearance: none;
+    margin-top: 3.2rem;
+    height: 5px;
+    width: 9rem;
+    background-color:var(--fill-button);
+}
+
+/* Bolinha volume normal */
+.range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color:var(--fill-button);
+}
+
+/* Ativando com o JS*/
+/*mood ativado */
+main section.moods div.cardOne.activeButton svg path,
+main section.moods div.cardTwo.activeButton svg path,
+main section.moods div.cardThree.activeButton svg path,
+main section.moods div.cardFour.activeButton svg path
+{
+    fill: var(--fill-activeButton);
+}
+
+/* volume ativado */
+main section.moods div.cardOne.activeButton input,
+main section.moods div.cardTwo.activeButton input,
+main section.moods div.cardThree.activeButton input,
+main section.moods div.cardFour.activeButton input
+{
+    background-color: var(--fill-activeButton);
+}
+/* Bolinha do volume ativada */
+main section.moods div.cardOne.activeButton input.range::-webkit-slider-thumb,
+main section.moods div.cardTwo.activeButton input.range::-webkit-slider-thumb,
+main section.moods div.cardThree.activeButton input.range::-webkit-slider-thumb,
+main section.moods div.cardFour.activeButton input.range::-webkit-slider-thumb
+{
+    background-color: var(--fill-activeButton);
+}
+
+
+
+
+/* Simbolo de lightTheme e darkTheme */
+div.mode{
+    position: absolute;
+    right: 6rem;
+    top: 6rem;
+    cursor: pointer;
+}
+
+div#lightMode:hover,
+div#darkMode:hover
+{
+    filter: brightness(0) saturate(100%) invert(79%) sepia(74%) saturate(633%) hue-rotate(353deg) brightness(94%) contrast(101%);
+    transform: scale(1.15);
+}
+
+div.mode div#lightMode svg path{
+    fill: var(--fill-lighThemeIcon);
+}
+
+
+.hide{
+    display: none;
+}
+
+
+
+/* DARK MODE*/
+body.dark{
+    background-color: var(--bg-color-darkTheme);
+}
+
+main section div#timer.dark{
+    color: var(--fc-color-darkTheme-Clock);
+}
+
+main section div#controls.dark .play svg path,
+main section div#controls.dark .stop svg path,
+main section div#controls.dark .plus svg path,
+main section div#controls.dark .minus svg path{
+    fill: var(--fc-color-darkTheme-ClockButtons);
+}
+
+main div.cardOne.dark,
+main div.cardTwo.dark,
+main div.cardThree.dark,
+main div.cardFour.dark
+{
+    background: var(--bg-color-darkTheme-NormalCard);
+}
+
+/* Ativando com o JS*/
+main div.cardOne.activeButton.dark{
+    background: #779779;
+    transform: scale(1.2);
+}
+
+main div.cardTwo.activeButton.dark{
+    background: #7e7797;
+    transform: scale(1.2);
+}
+
+main div.cardThree.activeButton.dark{
+    background: #916699;
+    transform: scale(1.2);
+}
+
+main div.cardFour.activeButton.dark{
+    background: #a64e55;
+    transform: scale(1.2);
+}
+
+
+main section.moods div.cardOne.dark svg path,
+main section.moods div.cardTwo.dark svg path,
+main section.moods div.cardThree.dark svg path,
+main section.moods div.cardFour.dark svg path
+{
+    fill: var(--fill-darkTheme-button);
+}
+
+main section.moods div.cardOne.activeButton.dark svg path,
+main section.moods div.cardTwo.activeButton.dark svg path,
+main section.moods div.cardThree.activeButton.dark svg path,
+main section.moods div.cardFour.activeButton.dark svg path
+{
+    fill: var(--fill-darkTheme-activeButton);
+}
+
+
+/* volume normal */
+div.cardOne input.range.dark,
+div.cardTwo input.range.dark,
+div.cardThree input.range.dark,
+div.cardFour input.range.dark
+{
+    background-color:var(--fill-darkTheme-button);
+}
+
+/* Bolinha volume normal */
+div.cardOne input.range.dark::-webkit-slider-thumb,
+div.cardTwo input.range.dark::-webkit-slider-thumb,
+div.cardThree input.range.dark::-webkit-slider-thumb,
+div.cardFour input.range.dark::-webkit-slider-thumb
+{
+    background-color:var(--fill-darkTheme-button);
+}
+
+/* volume ativado */
+main section.moods div.cardOne.activeButton.dark input,
+main section.moods div.cardTwo.activeButton.dark input,
+main section.moods div.cardThree.activeButton.dark input,
+main section.moods div.cardFour.activeButton.dark input
+{
+    background-color: var(--fill-darkTheme-activeButton);
+}
+/* Bolinha do volume ativada */
+main section.moods div.cardOne.activeButton.dark input.range::-webkit-slider-thumb,
+main section.moods div.cardTwo.activeButton.dark input.range::-webkit-slider-thumb,
+main section.moods div.cardThree.activeButton.dark input.range::-webkit-slider-thumb,
+main section.moods div.cardFour.activeButton.dark input.range::-webkit-slider-thumb
+{
+    background-color: var(--fill-darkTheme-activeButton);
+}
+
+div.mode div#lightMode.dark svg path{
+    fill: var(--fill-darkThemeIcon);
+}

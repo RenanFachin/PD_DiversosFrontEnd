@@ -1,0 +1,230 @@
+:root{
+    /*font*/
+    --ff-all: 'Poppins', sans-serif;
+
+    /*background*/
+    --bg-bgLeft: white; 
+    --bg-bgRight: yellow;
+    --bg-btn: #333;
+
+    /*font Color*/
+    --fc-logo: #111;
+    --fc-nav: #bdbdbd;
+    --fc-nav-hover: #333;
+    --fc-text: #777;
+    --fc-btn-hover: #fff;
+
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--ff-all)
+}
+
+.banner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.banner .box{
+    position: relative;
+    height: 100vh;
+    background: var(--bg-bgLeft);
+}
+
+.banner .box:last-child{
+    background: var(--bg-bgRight);
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 6rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    font-size: 2.6rem;
+    color: var(--fc-logo);
+    font-weight: 800;
+}
+
+header ul{
+    display: flex;
+}
+
+header ul li{
+    margin-left: 3rem;
+}
+
+header ul li a{
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--fc-nav);
+    letter-spacing: 2px;
+}
+
+header ul li a:hover{
+    color: var(--fc-nav-hover);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem;
+}
+
+.content .contentBox h2{
+    font-size: 6.4rem;
+    color: var(--fc-nav-hover);
+}
+
+.content .contentBox p{
+    font-size: 1.6rem;
+    color: var(--fc-text);
+    line-height: 2em;
+}
+
+.content .contentBox .btn{
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: var(--fc-nav-hover);
+    font-weight: 500;
+    border: 2px solid var(--fc-nav-hover);
+
+    padding: 1rem 3rem;
+    letter-spacing: 1px;
+
+    transition: 0.7s;
+}
+
+.content .contentBox .btn:hover{
+    background: var(--bg-btn);
+    color: var(--fc-btn-hover);
+    letter-spacing: 2px;
+}
+
+.sci{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 3rem;
+    right: 6rem;
+}
+
+.sci h3{
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--fc-nav);
+    letter-spacing: 1px;
+}
+
+.sci li{
+    margin-left: 2rem;
+}
+
+.sci li img{
+    max-width: 3rem;
+}
+
+.images{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Criando os quadrados com 50% de largura e 50% de altura*/
+.images .imgBox{
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    /*background: red;*/
+}
+
+.images .imgBox:nth-child(2){
+    /*background: blue;*/
+}
+
+/*O terceiro espaço terá metade da altura da tela e 100% da largura para que a terceira imagem seja um retângulo*/
+.images .imgBox:nth-child(3){
+    width: 100%;
+    /*background: green;*/
+}
+
+.images .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/*Responsive part*/
+@media(max-width: 991px)
+{
+    .banner
+    {
+        grid-template-columns: 1fr;
+    }
+    header
+    {
+        padding: 2rem 4rem;
+    }
+    .content
+    {
+        padding: 4rem;
+    }
+    .banner .box.content
+    {
+        height: 70vh;
+    }
+    .banner .box.images
+    {
+        height: auto;
+    }
+}
+
+@media(max-width: 600px)
+{
+    .content .contentBox h2
+    {
+        font-size: 3rem;
+        margin-bottom: 1.6rem;
+    }
+    .content .contentBox p
+    {
+        font-size: 1.4rem;
+    }
+    .content .contentBox .btn
+    {
+        font-size: 1.2rem;
+    }
+    .images .imgBox
+    {
+        width: 100%;
+        height: 40vh;
+    }
+    .sci li img
+    {
+        max-width: 2rem;
+    }
+    .sci h3
+    {
+        font-size: 1.4rem;
+    }
+}

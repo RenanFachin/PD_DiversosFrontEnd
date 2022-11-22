@@ -1,0 +1,323 @@
+:root{
+    --ff-page: 'Poppins', sans-serif;
+    --bg-section: #0062be;
+    --bg-button: #fff;
+    --fc-text: #fff;
+    --fc-linkText: #111;
+    --fc-hoverColor: #ed0223;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--ff-page);
+}
+
+section{
+    /*border: 1px red solid;*/
+    /*Definindo os tamanhos da página como um todo*/
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-section);
+
+    transition: 0.5s;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Características da LOGO*/
+header .logo {
+    position: relative;
+    max-width: 80px;
+}
+
+/*Características da lista*/
+header ul{
+    position: relative;
+    display: flex;
+}
+
+header ul li{
+    list-style: none;
+}
+
+header ul li a{
+    display: inline-block;
+    color: var(--fc-text);
+    font-weight: 300;
+    font-size: 18px;
+    margin-left: 45px;
+    text-decoration: none;
+}
+
+
+/*Main do site*/
+
+.content{
+    position: relative;
+    /*Deixando como  100% da largura da página*/
+    width: 100%;
+
+    /*Colocando as duas DIV um ao lado do outro e alinhando*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox{
+    position: relative;
+    /*Tamanho da caixa que recebe os textos h2,h2<span>, p e a*/
+    max-width: 600px;
+}
+
+.content .textBox h2{
+    color: var(--fc-text);
+    font-size: 4em;
+    line-height: 1.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.content .textBox span{
+    font-size: 2.4em;
+    letter-spacing: 10px;
+}
+
+.content .textBox p{
+    color: var(--fc-text);
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: var(--bg-button);
+    color: var(--fc-linkText);
+    border-radius: 40px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.content .imgBox{
+    /*Tamanho da caixa que a imagem*/
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 80px;
+    margin-top: 50px;
+}
+
+.content .imgBox img{
+    max-width: 260px;
+}
+
+
+/*-------------Garrafas embaixo da tela-----------------*/
+
+.thumb{
+    position: absolute;
+    left: 50%;
+
+    bottom: 35px;
+    transform: translateX(-50%);
+
+    display: flex;
+}
+
+.thumb li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover{
+    transform: translateY(-15px);
+}
+
+.thumb li img{
+    max-width: 60px;
+}
+
+/*--------------Redes Sociais------------------*/
+.sci{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    display: inline-block;
+    /*Trocar a cor do png*/
+    filter: invert(1);
+
+    margin: 5px 0;
+
+    /*Diminuir o tamanho dos ícones*/
+    transform: scale(0.6);
+}
+
+
+
+@media (max-width:991px)
+{
+    section
+    {
+        padding: 40px;
+        padding-bottom: 130px;
+    }
+    header
+    {
+        padding: 20px 40px;
+    }
+    header .logo
+    {
+        position: relative;
+        max-width: 60px;
+    }
+    /*Criando o menu suspenso*/
+    header ul
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-button);
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        /*Desligando o menu suspenso até o clique*/
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    header ul li a
+    {
+        display: inline-block;
+        color: var(--fc-linkText);
+        font-size: 2em;
+        margin-left: 0;
+        font-weight: 400;
+        text-decoration: none;
+        margin: 10px 0;
+    }
+
+    header ul li a:hover
+    {
+        color: var(--fc-hoverColor)
+    }
+    /*Criando o botão para ativar o menu suspenso*/
+    .toggleMenu
+    {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(images/menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        z-index: 2;
+        cursor: pointer;
+    }
+    .toggleMenu.active
+    {
+        background: url(images/close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        filter: invert(1);
+    }
+
+    header ul.active
+    {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .content
+    {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .content .textBox
+    {
+        position: relative;
+        max-width: 100%;
+        padding-right: 20px;
+    }
+
+    .content .textBox h2
+    {
+        font-size: 3em;
+    }
+
+    .content .textBox a
+    {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .content .imgBox
+    {
+        width: 100%;
+        display: flex;
+        padding-right: 0;
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .content .imgBox img
+    {
+        max-width: 150px;
+    }
+
+    .thumb li img
+    {
+        max-width: 35px;
+    }
+
+    .sci
+    {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50px;
+        background: rgba(0,0,0,0.2);
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

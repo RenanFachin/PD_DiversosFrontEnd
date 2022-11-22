@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --font-family: 'Roboto', sans-serif;
+
+    --bg-page: linear-gradient(152deg, #0F2B05 4.34%, #000000 87.6%);
+
+    --text-InfoColor: white;
+}
+
+body * {
+    font-family: var(--font-family);
+}
+
+body {
+    font-size: 1.6rem;
+    background-image: var(--bg-page);
+    height: 100vh;
+}
+
+header {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+main {
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    width: 26.4rem;
+    height: 41.9rem;
+
+    background-image: url(./assets/bg-ignite.svg);
+    cursor: pointer;
+
+    opacity: 0;
+    transform: translateY(-80px);
+    /* forwards é para permanecer com as propriedades da animação no 100% */
+    animation: cardAppear 600ms forwards;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.card > img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+
+    margin-top: 10.3rem;
+
+    /* Fazendo com que não ocorra eventos de select*/
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.info {
+    text-align: left;
+    color: var(--text-InfoColor);
+
+    margin-left: 2.4rem;
+    margin-top: 9.6rem;
+}
+
+.info h1 {
+    font-size: 1.8rem;
+    line-height: 140%;
+}
+
+.info p {
+    font-size: 1.4rem;
+    line-height: 160%;
+    font-weight: 300;
+}
+
+
+/* Animation */
+
+@keyframes cardAppear {
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

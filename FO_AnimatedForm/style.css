@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    height: 100vh;
+  }
+  
+  body {
+    background-color: #7159c1;
+    font-family: Roboto, Arial, sans-serif;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin: 20px 0;
+    color: white;
+  }
+  
+  form {
+    margin: 20px 0;
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 5px;
+  }
+  
+  form .input-block {
+    margin-bottom: 20px;
+  }
+  
+  form .input-block label {
+    font-size: 14px;
+    color: darkslateblue;
+  }
+  
+  form .input-block input {
+    width: 100%;
+    display: block;
+    margin-top: 8px;
+    padding: 7px;
+    font-size: 16px;
+    color: #7159c1;
+    border-radius: 2px;
+    border: 1px solid #ccddef;
+    outline-color: #7159c1;
+  }
+  
+  form .btn-login {
+    display: block;
+    min-width: 120px;
+    border: none;
+    background-color: #7159c1;
+    color: white;
+    border-radius: 25px;
+    margin: auto;
+    padding: 7px;
+    cursor: pointer;
+  }
+
+
+/* APARIÇÃO DO FORMULÁRIO */
+/* Utilizando: @KEYFRAMES */
+
+form{
+  animation: fade 0.6s;
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* APARECIMENTO DOS CAMPOS (ESQUERDA PARA DIREITA) */
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Resolvendo o "problema" de transbordamento*/
+form {
+  overflow: hidden;
+}
+
+/* Aplicando para o primeiro campo (Email) */
+form .input-block:nth-child(1){
+  animation: move 0.6s;
+}
+
+/* Aplicando para o segundo campo (Password) */
+form .input-block:nth-child(2){
+  animation: move 0.6s;
+  animation-delay: 0.1s;
+
+  /* Definindo o que o elemento vai fazer antes da animação realmente acontecer */
+  animation-fill-mode: backwards;
+}
+
+/* Aplicando para o botão de login também */
+form .btn-login{
+  animation: move 0.7s;
+  animation-delay: 0.3s;
+
+  animation-fill-mode: backwards;
+}
+
+
+/* FAZENDO O FORMULÁRIO SAIR QUANDO O BOTÃO LOGIN FOR CLICADO */
+/* Criando a classe de hide para sumir com todo o formulário com o auxilio do JS */
+.form-hide{
+  animation: disappearForm 1.3s;
+
+  /* Ficando na posição final do keyframe */
+  animation-fill-mode: forwards;
+
+  /* Desafio 05 - Adicionar um efeito difernete de timing para a saída */
+  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* Criando o keyframe para fazer o movimento de saida do formulário */
+@keyframes disappearForm {
+  0%{
+    /* Iniciando na posição inicial */
+    transform: translateY(0);
+  }
+  100%{
+    /* Finalizando a animação "fora da tela" */
+    transform: translateY(100vh);
+  }
+}
+
+/* Fazendo o formulário vibrar ao tentar fazer um submit com dados faltando */
+@keyframes submitnono {
+  0% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(-15%);
+  }
+  70%{
+    transform: translateX(15%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+form.validate-error {
+  animation: submitnono 0.1s linear, fade paused;
+
+  /* Repete as interações */
+  animation-iteration-count: 2;
+}
+
+/* Squares */
+
+body{
+  /* Para não ficar aparecendo a barra de rolagem */
+  overflow: hidden;
+}
+
+.squares li {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255,255,255,0.15);
+  display: block;
+  position: absolute;
+  bottom: -60px;
+
+  animation: slider 8s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slider {
+  0%{
+    transform: translateY(0);
+
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-900px) rotate(720deg);
+
+    opacity: 0;
+  }
+}

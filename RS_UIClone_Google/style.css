@@ -1,0 +1,231 @@
+:root{
+    --fc-colorMenuLink: #757575;
+    --fc-colorMenuLink_active: #4285f4;
+    --fc-contentOffer: #78787abf;
+    --fc-contentOfferAnchor: #1967d2;
+    --fc-colorFooterText: #84878a;
+
+    --borderColor_contentSearch: #dfe1e5;
+    --bg-colorFooter: #F2F2F2;
+}
+
+/* Reset Style */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, input, button {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Para fazer o body ocupar toda a página html possível*/
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+/*  Style Header */
+.menu {
+    height: 48px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__section {
+    display: flex;
+    align-items: center;
+}
+
+.menu__section.left .menu__icon{
+    padding: 12px 16px;
+}
+
+.menu__link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--fc-colorMenuLink);
+    padding: 12px 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu__link.active {
+    color: var(--fc-colorMenuLink_active);
+    border-bottom: 2px solid var(--fc-colorMenuLink_active);
+}
+
+/* Todos os elementos do menu__link que não estiverem junto com a classe ACTIVE vão receber esta propriedade */
+.menu__link:not(.active) {
+    margin-bottom: 2px;
+}
+
+.menu__section.right {
+    margin-right: 4px;
+}
+
+.menu__section.right .menu__icon {
+    padding: 12px;
+}
+
+.menu__profile {
+    padding: 4px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.menu__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.menu__avatar--frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* MAIN style */
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 230px 8px 0px;
+    flex: 1;  /* Para fazer o .content ocupar tudo da pagina*/
+}
+
+.content__logo{
+    height: 80px;
+}
+
+.content__search {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 736px; /* O tamanho do INPUT não ultrapassará o valor de 736PX de largura, mesmo na versão DESKTOP*/
+    padding: 7px 10px 6px 20px;       /* Cima direita baixo esquerda*/
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8); 
+    background-color: transparent;
+    border-radius: 25px;
+    border: 1px solid var(--borderColor_contentSearch);
+    outline: 0; /* Tirando a marcação ao redor do input*/
+}
+
+.content__search:focus{
+    box-shadow: 0 1px 6px rgb(32, 33, 36, 0.2);
+    border-color: rgba(223, 235, 229, 0);
+}
+
+.content__offer {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--fc-contentOffer);
+    font-weight: 200;
+    padding: 6px 12px;
+}
+
+.content__offer a{
+    text-decoration: none;
+    color: var(--fc-contentOfferAnchor);
+}
+
+/* FOOTER Style */
+
+.footer{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-colorFooter);
+}
+
+/* :not(:first-child) é o mesmo que dizer: APLICAR PARA TODOS QUE NÃO SEJAM O PRIMEIRO FILHO*/
+.footer__section:not(:first-child){
+    border-top: 1px solid #e4e4e4;
+}
+
+.footer__location{
+    font-size: 16px;
+    color: var(--fc-colorFooterText);
+    padding: 10px 12px;
+}
+
+.footer__links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: var(--fc-colorFooterText);
+    padding: 10px;
+}
+
+.footer__links a:not(:first-child){
+    margin-left: 27px;
+}
+
+
+
+/* MEDIA QUERY */
+
+@media (min-width: 763px){
+    .menu
+    {
+        justify-content:flex-end;
+        padding: 30px 30px 0 0;
+    }
+    .menu__section.left .menu__icon
+    {
+        display: none;
+    }
+    .menu__link
+    {
+        font-size: 14px;
+        padding: 12px;
+    }
+    .menu__section.right
+    {
+        margin-right: 30px;
+    }
+    .content
+    {
+        padding-top: 200px;
+    }
+    .content__logo
+    {
+        height: 120px;
+    }
+    .content__search
+    {
+        margin-top: 25px;
+    }
+    .footer__location
+    {
+        font-size: 17px;
+        padding: 15px;
+    }
+    .footer__links 
+    {
+        justify-content: flex-end;
+        font-size: 14px;
+        padding: 15px;
+    }
+    .footer__links a:not(:first-child)
+    {
+        margin-left: 45px;
+    }
+    .footer__links a:nth-child(3)
+    {
+        margin-right: 30px;
+    }
+}

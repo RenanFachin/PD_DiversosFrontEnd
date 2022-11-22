@@ -1,0 +1,335 @@
+:root{
+    --ff-page: 'Poppins', sans-serif;
+
+    --bg-all: #000;
+
+    --fc-nav: #fff;
+    --fc-nav-hover: #de0611;
+
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--ff-page);
+    font-size: 1.6rem;
+}
+
+body{
+    background: var(--bg-all);
+}
+
+/* Posição do header da página */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 3rem 10rem;
+    /* Para estar a frente da imagem de fundo*/
+    z-index: 100;
+}
+
+/* Logo */
+header .logo img{
+    max-width: 17rem;
+}
+
+/* Navegação da página */
+header ul.navigation{
+    display: flex;
+}
+
+header ul.navigation li{
+    margin: 0 1.5rem;
+}
+
+header ul.navigation li a{
+    color: var(--fc-nav);
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+}
+
+header ul.navigation li:hover a{
+    color: var(--fc-nav-hover);
+}
+
+/* Buscar da página */
+header .search{
+    position: relative;
+    width: 30rem;
+    height: 4rem;
+}
+
+/* Para o buscar da página completar toda o espaço definido no >> header .search << */
+header .search input{
+    font-size: 1.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--fc-nav);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    outline: none;
+    border-radius: 5px;
+    padding: 0 1rem 0 5rem;
+    backdrop-filter: blur(10px);
+}
+
+header .search input::placeholder{
+    color: var(--fc-nav);
+}
+
+header .search i {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    padding-right: 1rem;
+    color: var(--fc-nav);
+    /*Traço*/
+    border-right: 1px solid var(--fc-nav);
+}
+
+/* Imagem do fundo */
+main .banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 10rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Definindo a posição que o banner ficará e o tamanho de 100% da página de largura e altura*/
+main .banner .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .content{
+    position: relative;
+    z-index: 1;
+    max-width: 50rem;
+}
+
+main .content .movieTitle{
+    max-width: 30rem;
+}
+
+main .banner .content h4{
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+}
+
+main .banner .content h4 span{
+    padding: 0 10px;
+    border-right: 1px solid rgba(255,255,255,0.5);
+}
+
+main .banner .content h4 span:first-child{
+    /* Colocando a primeira span bem colado a esquerda, ignorando o padding colocado na classe span geral*/
+    padding-left: 0;
+}
+
+main .banner .content h4 span:last-child{
+    /* Retirando o traço separador do ultimo filho span*/
+    border-right: none;
+}
+
+main .banner .content h4 span i{
+    background: var(--fc-nav-hover);
+    color: var(--fc-nav);
+    padding: 0 6px;
+    font-style: normal;
+    border-radius: 3px;
+
+    display: inline-block;
+}
+
+main .banner .content p{
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    color: var(--fc-nav);
+    margin: 2rem 0 2rem;
+}
+
+main .banner .content .buttons{
+    position: relative;
+}
+
+main .banner .content .buttons a{
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem;
+    background: var(--fc-nav-hover);
+    color: var(--fc-nav);
+    padding: 6px 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main .banner .content .buttons a:last-child{
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+main .banner .content .buttons a:hover:last-child{
+    background: var(--fc-nav-hover);
+}
+
+main .play{
+    position: absolute;
+    bottom: 5rem;
+    left: 10rem;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--fc-nav);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+main .play img{
+    margin-right: 2rem;
+    max-width: 5rem;
+}
+
+main .trailer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+
+    /* Escondendo o video e o botão de close*/
+    visibility: hidden;
+    opacity: 0;
+}
+
+main .trailer video{
+    max-width: 100rem;
+    outline: none;
+}
+
+main .trailer.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+main .trailer .close{
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    cursor: pointer;
+    filter: invert(1);
+    max-width: 3.5rem;
+}
+
+@media (max-width: 991px)
+{
+    header
+    {
+        padding: 2rem 5rem;
+        flex-direction: column;
+    }
+    header .search
+    {
+        position: relative;
+        width: calc(50%);
+        height: 4rem;
+    }
+    .navigation
+    {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+    }
+    main .banner
+    {
+        padding: 10rem 5rem;
+    }
+    main .play
+    {
+        left: 4.5rem;
+        font-size: 1.5rem;
+        bottom: 3rem;
+    }
+    main .play img
+    {
+        margin-right: 2rem;
+        max-width: 4rem;
+    }
+    main .trailer video
+    {
+        max-width: 80%;
+
+    }
+}
+
+@media (max-width: 600px)
+{
+    header
+    {
+        padding: 2rem;
+    }    
+    header .logo img
+    {
+        margin-bottom: 2rem;
+        max-width: 20rem;
+    }
+    header .search
+    {
+        position: relative;
+        width: calc(100% - 2rem);
+        height: 4rem;
+    }
+    header ul.navigation li
+    {
+        margin: 0 0.8rem;
+        margin-bottom: 1rem;
+    }
+    main .content .movieTitle{
+        margin-bottom: 2rem;
+    }
+    main .banner
+    {
+        padding: 13rem 2rem 5rem;
+    }
+    main .play
+    {
+        left: 2rem;
+        font-size: 1.4rem;
+        bottom: 3rem;
+    }
+}

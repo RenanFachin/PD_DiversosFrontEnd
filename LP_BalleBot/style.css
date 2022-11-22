@@ -1,0 +1,155 @@
+:root{
+    --ff-righteous: 'Righteous', cursive;
+    --ff-sarala: 'Sarala', sans-serif;
+
+    --fc-text1: #FFF2E7;
+    --fc-text2: #ECD6C4;
+    --fc-text-button: #2F2325;
+    --bg-primary: linear-gradient(68.15deg, #2F2325 16.62%, #8E5D52 85.61%);
+    --bg-buttom: #ECD6C4;
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    background: var(--bg-primary);
+    font-family: var(--ff-sarala);
+    color: var(--fc-text1);
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 24px;
+}
+
+header img {
+    height: 80px;
+    transition: all 400ms;
+
+}
+
+header img:hover,
+nav a:hover{
+    transform: scale(1.20);
+}
+
+nav {
+    display: flex;
+    gap: 42px;
+}
+
+nav a{
+    color: var(--fc-text1);
+    font-weight: 300;
+    font-size: 16px;
+
+    transition: all 400ms;
+}
+
+main {
+    border-top: 0.4px solid var(--fc-text1);
+
+    margin-bottom: 48px;
+}
+
+/*Pegando o primeiro section dentro do main*/
+main > section:nth-child(1){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Pegando a div que está dentro do main section*/
+main section div{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/*Pegando o h1 que está dentro da div dentro da main*/
+main section div h1{
+    font-family: var(--ff-righteous);
+    font-size: 64px;
+    font-weight: 400;
+}
+
+main section div h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+button{
+    background-color: var(--bg-buttom);
+    width: 140px;
+    height: 65px;
+    border: none;
+    border-radius: 20px;
+    /*Sombra no botão*/
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+
+    color: --fc-text-button;
+    font-weight: 400;
+    font-size: 18px;
+
+}
+
+button:hover{
+    background-color: rgba(236, 214, 196, 0.53);
+}
+
+main img{
+    height: 430px;
+}
+
+
+/*Pegando o segundo section dentro do main*/
+main > section:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    color: blue;
+    margin-top: 48px;
+}
+
+main h3{
+    border-top: 0.4px solid var(--fc-text1);
+    padding-top: 48px;
+
+    font-family: var(--ff-righteous);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--fc-text1);
+
+    margin-bottom: 16px;
+}
+
+main p{
+    font-family: var(--ff-sarala);
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--fc-text2);
+}
+
+footer{
+    border-top: 0.4px solid var(--fc-text1);
+    padding: 32px;
+}
+
+footer img{
+    height: 48px;
+
+    /*Colocar no meio da tela um elemento único*/
+    display: block;
+    margin: 0 auto;
+}
